@@ -14,8 +14,13 @@ public class Sprint extends Mod {
 	
 	@Override
 	public void onTick() {
-		mc.player.setSprinting(true);
+		if (mc.player.forwardSpeed>0) mc.player.setSprinting(true);
 		super.onTick();
 	}
+	
+	@Override
+    public void onDisable() {
+        super.onDisable();
+    }
 
 }

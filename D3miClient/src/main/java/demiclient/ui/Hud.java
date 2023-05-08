@@ -1,5 +1,7 @@
 package demiclient.ui;
 
+import java.awt.Color;
+
 import demiclient.module.Mod;
 import demiclient.module.ModuleManager;
 import net.minecraft.client.MinecraftClient;
@@ -13,21 +15,14 @@ public class Hud {
 	
 	public static void render(MatrixStack matrices, float tickDelta) {
 		
-		// mc.textRenderer.drawWithShadow(matrices, "D3miGod", 10, 10, Color.PINK.getRGB());
+		mc.textRenderer.drawWithShadow(matrices, "D3miGod", 10, 10, Color.PINK.getRGB());
 		renderArrayList(matrices);
 		
 	}
 	
 	public static void renderArrayList(MatrixStack matrices) {
 		if (on) {
-			int index = 0;
-			int sWidth = mc.getWindow().getScaledWidth();
-			int sHeight = mc.getWindow().getScaledHeight();
-			
-			for (Mod mod : ModuleManager.INSTANCE.getEnabledModules()) {
-				mc.textRenderer.drawWithShadow(matrices, mod.getDisplayName(), (sWidth - 4) - mc.textRenderer.getWidth(mod.getDisplayName()), 10 + (index * mc.textRenderer.fontHeight), -1);
-				index++;
-			}
+			 mc.textRenderer.drawWithShadow(matrices, "D3miGod", 10, 10, Color.PINK.getRGB());
 		}
 	}
 	

@@ -1,6 +1,7 @@
 package demiclient.utils.player;
 
 import java.util.Comparator;
+
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Predicate;
@@ -36,7 +37,6 @@ import net.minecraft.screen.StonecutterScreenHandler;
 import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.util.Hand;
 
-import demiclient.mixins.IClientPlayerInteractionManagerMixin;
 import demiclient.utils.player.mixin.IClientPlayerInteractionManager;
 
 public class InventoryUtils {

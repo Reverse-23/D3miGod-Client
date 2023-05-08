@@ -2,6 +2,7 @@ package demiclient;
 
 import java.util.Timer;
 
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.glfw.GLFW;
@@ -14,6 +15,7 @@ import demiclient.module.ModuleManager;
 import demiclient.ui.screen.clickgui.ClickGUI;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.MinecraftClient;
+import com.google.common.eventbus.EventBus;
 
 
 public class Client implements ModInitializer {
@@ -23,6 +25,8 @@ public class Client implements ModInitializer {
 	public Logger logger = LogManager.getLogger(Client.class);
 	
 	private MinecraftClient mc = MinecraftClient.getInstance();
+	
+	public static final EventBus EventBus = new EventBus();
 	
 	
 	
@@ -47,9 +51,9 @@ public class Client implements ModInitializer {
 	public void onInitialize() {
 		 
 		
-		logger.info("hello world");
+		logger.info("---_---_---_D3miGod-Client _---_---_---");
 		
-		handlers.ready = (user) -> logger.info("Ready!");
+		handlers.ready = (user) -> logger.info("Discord on! " + user);
 		lib.Discord_Initialize(applicationId, handlers, true, steamId);
 
 		basicPresence();
@@ -71,7 +75,7 @@ public class Client implements ModInitializer {
 		presence.startTimestamp = start_time; // each second
 		presence.details = "Playing Minecraft";
 		presence.largeImageKey = "spartan";
-		presence.largeImageText = "D3miGod Client";
+		presence.largeImageText = "D3miGod Client 0.2";
 		presence.instance = 1;
 		lib.Discord_UpdatePresence(presence);
 

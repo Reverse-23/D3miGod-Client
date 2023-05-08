@@ -1,0 +1,5 @@
+package demiclient.module.misc;
+
+public class AutoEat extends Mod{
+
+}

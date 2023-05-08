@@ -8,8 +8,9 @@
   "client": [
     "MinecraftClientMixin",
     "KeyboardMixin",
-    "InGameHudMixin",
-    "IClientPlayerInteractionManagerMixin"
+    "IClientPlayerInteractionManagerMixin",
+    "ClientConnectionMixin",
+    "ClientPlayerEntityMixin"
     
 
   ],

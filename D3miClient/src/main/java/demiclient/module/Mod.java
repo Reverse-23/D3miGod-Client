@@ -5,6 +5,7 @@ import java.util.List;
 
 import demiclient.module.settings.Setting;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.util.math.MatrixStack;
 
 public class Mod {
 
@@ -110,6 +111,11 @@ public class Mod {
 		
 	
 	}
+	
+
+	public void onTickDisabled() {}
+	public void onMotion() {};
+    public void onWorldRender(MatrixStack matrices) {}
 
 
 
@@ -140,6 +146,12 @@ public class Mod {
 		
 		private Category(String name) {
 			this.name = name;
+		}
+	}
+	
+	public void nullCheck() {
+		if(mc.world == null || mc.player == null || mc.getNetworkHandler() == null || mc.getBufferBuilders() == null) {
+			return;
 		}
 	}
 }
