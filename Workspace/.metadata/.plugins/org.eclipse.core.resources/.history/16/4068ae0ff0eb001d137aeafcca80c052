@@ -1,6 +1,0 @@
-package demiclient.module;
-
-public class Module {
-
-	private String name;
-}

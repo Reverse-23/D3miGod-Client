@@ -1,7 +1,0 @@
-package demiclient.ui.screen.clickgui;
-
-public class ClickGUI {
-
-	public static ClickGUI INSTANCE  = new ClickGUI();
-	
-}

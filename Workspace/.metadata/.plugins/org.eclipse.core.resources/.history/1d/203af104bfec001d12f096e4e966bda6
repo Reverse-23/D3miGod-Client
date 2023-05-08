@@ -1,5 +1,0 @@
-package demiclient.mixins;
-
-public class InGameHudMixin {
-
-}

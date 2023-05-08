@@ -1,5 +1,0 @@
-package demiclient.utils.player.mixin;
-
-public class IClientPlayerInteractionManager {
-
-}

@@ -1,9 +1,0 @@
-package demiclient.module.settings;
-
-public class BooleanSetting extends Settings{
-	
-	public BooleanSetting(String name, boolean defaultValue) {
-		
-	}
-
-}
