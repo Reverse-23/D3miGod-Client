@@ -1,0 +1,5 @@
+package demiclient.utils.player;
+
+public class InventoryUtils {
+
+}

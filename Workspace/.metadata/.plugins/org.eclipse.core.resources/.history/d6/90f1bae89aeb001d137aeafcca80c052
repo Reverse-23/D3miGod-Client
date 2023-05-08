@@ -1,0 +1,24 @@
+package demiclient.extensions;
+
+import net.arikia.dev.drpc.DiscordEventHandlers;
+import net.arikia.dev.drpc.DiscordUser;
+import net.arikia.dev.drpc.callbacks.ReadyCallback;
+
+public class DiscordRP {
+	
+	private boolean running = true;
+	private long created = 0;
+
+	public void Start() {
+		
+		this.created = System.currentTimeMillis();
+		
+		DiscordEventHandlers handlers = new DiscordEventHandlers.Builder().setReadyEventHandler(new ReadyCallback() {
+			
+			@Override
+			public void apply(DiscordUser arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		}).build()
+}

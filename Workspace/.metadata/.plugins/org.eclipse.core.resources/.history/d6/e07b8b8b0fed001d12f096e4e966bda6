@@ -1,0 +1,24 @@
+package demiclient.ui.screen.clickgui.setting;
+
+import demiclient.module.settings.Setting;
+import demiclient.ui.screen.clickgui.ModuleButton;
+import net.minecraft.client.util.math.MatrixStack;
+
+public class Component {
+
+	public Component(Setting setting, ModuleButton parent) {
+		
+	}
+	
+	public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
+		
+	}
+	
+	public void mouseClicked(double mouseX, double mouseY, int button) {
+		
+	}
+	
+	public boolean isHovered(double mouseX, double mouseY) {
+		return mouseX > parent.x && mouseX < parent.x + parent.width && mouseY > parent.y + offset && mouseY < parent.y + offset + parent.height;
+	}
+}

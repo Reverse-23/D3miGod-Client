@@ -1,0 +1,29 @@
+package demiclient.ui.screen.clickgui.setting;
+
+import demiclient.module.settings.ModeSetting;
+import demiclient.module.settings.Setting;
+import demiclient.ui.screen.clickgui.ModuleButton;
+import net.minecraft.client.util.math.MatrixStack;
+
+public class ModeBox extends Component {
+
+	private ModeSetting modSet = (ModeSetting)setting;
+	
+	public ModeBox(Setting setting, ModuleButton parent, int offset) {
+		super(setting, parent, offset);
+		this.modSet = (ModeSetting)setting;
+	}
+	
+	@Override
+	public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
+		// TODO Auto-generated method stub
+		super.render(matrices, mouseX, mouseY, delta);
+	}
+	
+	@Override
+	public void mouseClicked(double mouseX, double mouseY, int button) {
+		// TODO Auto-generated method stub
+		super.mouseClicked(mouseX, mouseY, button);
+	}
+
+}

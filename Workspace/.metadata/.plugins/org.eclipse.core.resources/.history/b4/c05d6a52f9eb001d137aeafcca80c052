@@ -1,0 +1,64 @@
+package demiclient.extensions;
+
+import club.minnced.discord.rpc.*;
+
+import net.fabricmc.api.ModInitializer;
+
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
+
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class MinecraftRPCMod implements ModInitializer {
+
+	DiscordRPC lib = DiscordRPC.INSTANCE;
+	String applicationId = "765845744027435019";
+	String steamId = "";
+	DiscordEventHandlers handlers = new DiscordEventHandlers();
+	Long start_time = System.currentTimeMillis() / 1000;
+
+	MinecraftClient mc = MinecraftClient.getInstance();
+
+	Integer times = 0;
+	Timer t = new Timer();
+	@Override
+	public void onInitialize() {
+
+		handlers.ready = (user) -> System.out.println("Ready!");
+		lib.Discord_Initialize(applicationId, handlers, true, steamId);
+
+		basicPresence();
+		new Thread(() -> {
+			while (!Thread.currentThread().isInterrupted()) {
+				lib.Discord_RunCallbacks();
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException ignored) {
+				}
+			}
+		}, "RPC-Callback-Handler").start();
+
+		t.scheduleAtFixedRate(new TimerTask() {
+
+			
+		}, 5000, 5000);
+	}
+
+	private void basicPresence() {
+
+		DiscordRichPresence presence = new DiscordRichPresence();
+		presence.startTimestamp = start_time; // epoch second
+		presence.details = "In The Main Menu";
+		presence.largeImageKey = "icon_720";
+		presence.largeImageText = "Amitoj's Minecraft RPC";
+		presence.instance = 1;
+		lib.Discord_UpdatePresence(presence);
+
+	}
+
+	
+}

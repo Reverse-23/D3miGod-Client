@@ -1,0 +1,7 @@
+package demiclient.module.Movement;
+
+import demiclient.module.Mod;
+
+public class Sprint  extends Mod {
+
+}

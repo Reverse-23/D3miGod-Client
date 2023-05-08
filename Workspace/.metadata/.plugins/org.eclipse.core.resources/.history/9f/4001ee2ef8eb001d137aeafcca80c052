@@ -1,0 +1,5 @@
+package demiclient.extensions;
+
+public class MinecraftRPCMod {
+
+}

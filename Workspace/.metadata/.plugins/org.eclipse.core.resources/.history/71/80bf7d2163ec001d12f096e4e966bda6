@@ -1,0 +1,12 @@
+package demiclient.module.Movement;
+
+import demiclient.module.Mod;
+
+public class Flight extends Mod {
+
+	public Flight() {
+		super(name, description, category);
+		// TODO Auto-generated constructor stub
+	}
+
+}

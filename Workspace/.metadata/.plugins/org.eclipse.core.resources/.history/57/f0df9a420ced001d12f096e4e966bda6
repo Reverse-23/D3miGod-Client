@@ -1,0 +1,32 @@
+package demiclient.module.Movement;
+
+import org.lwjgl.glfw.GLFW;
+
+import demiclient.module.Mod;
+import demiclient.module.settings.NumberSetting;
+
+public class Flight extends Mod {
+
+	public NumberSetting speed = new NumberSetting("Speed", 0, 10, 1, 0.1 );
+	
+	public Flight() {
+		super("Creative", "Toggle fly", Category.MOVEMENT);
+		this.setKey(GLFW.GLFW_KEY_G);
+		addSetting(speed);
+	}
+	
+	@Override
+	public void onTick() {
+		mc.player.getAbilities().flying = true;
+		mc.player.getAbilities().setFlySpeed(speed.getValueFloat());
+		
+		super.onTick();
+	}
+	
+	@Override
+	public void onDisable() {
+		mc.player.getAbilities().flying = true;
+		super.onDisable();
+	}
+
+}

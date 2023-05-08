@@ -1,0 +1,14 @@
+package demiclient.module.settings;
+
+public class ModeSetting extends Setting {
+
+	public String[] modes;
+	private String defaultMode;
+	
+	public ModeSetting(String name, String defaultMode, String... modes) {
+		super(name);
+		this.defaultMode = defaultMode;
+		this.modes = modes;
+	}
+
+}

@@ -1,0 +1,5 @@
+package demiclient.module.setting;
+
+public class ISimpleOption {
+
+}

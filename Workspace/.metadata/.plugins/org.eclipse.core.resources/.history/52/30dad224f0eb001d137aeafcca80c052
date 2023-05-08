@@ -1,0 +1,19 @@
+package demiclient.module;
+
+public class Module {
+
+	private String name;
+	private String description;
+	private int key;
+	private boolean enabled;
+	
+	
+	public enum Category {
+		COMBAT,
+		MOVEMENT,
+		RENDER,
+		EXPLOIT,
+		WOLRD,
+		MISC
+	}
+}

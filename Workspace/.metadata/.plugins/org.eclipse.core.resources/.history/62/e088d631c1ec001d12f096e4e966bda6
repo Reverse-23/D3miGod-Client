@@ -1,0 +1,10 @@
+package demiclient.mixins;
+
+import org.spongepowered.asm.mixin.Mixin;
+
+import net.minecraft.client.gui.hud.InGameHud;
+
+@Mixin(InGameHud.class)
+public class InGameHudMixin {
+
+}

@@ -1,0 +1,15 @@
+package demiclient.module.Movement;
+
+import org.lwjgl.glfw.GLFW;
+
+import demiclient.module.Mod;
+import net.minecraft.client.Keyboard;
+
+public class Flight extends Mod {
+
+	public Flight() {
+		super("Flight", "Allows you to skywalk", Category.MOVEMENT);
+		this.setKey(GLFW.GLFW_KEY_G);
+	}
+
+}

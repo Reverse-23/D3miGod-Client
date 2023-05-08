@@ -1,0 +1,22 @@
+package demiclient.module.settings;
+
+public class Settings {
+	
+	public String name;
+	private boolean visible = true;
+	
+	public boolean isVisible() {
+		return visible;
+	}
+	
+	public void setVisible(boolean visible) {
+		this.visible = visible;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	
+
+}

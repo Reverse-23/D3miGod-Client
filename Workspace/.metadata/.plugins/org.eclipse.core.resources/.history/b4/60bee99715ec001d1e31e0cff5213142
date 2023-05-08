@@ -1,0 +1,95 @@
+package demiclient;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Timer;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.lwjgl.glfw.GLFW;
+
+import club.minnced.discord.rpc.DiscordEventHandlers;
+import club.minnced.discord.rpc.DiscordRPC;
+import club.minnced.discord.rpc.DiscordRichPresence;
+import demiclient.module.Mod;
+import demiclient.module.ModuleManager;
+import net.fabricmc.api.ModInitializer;
+import net.minecraft.client.MinecraftClient;
+
+
+public class Client implements ModInitializer {
+
+	
+	public static final Client INSTANCE  = new Client();
+	public Logger logger = LogManager.getLogger(Client.class);
+	
+	private MinecraftClient mc = MinecraftClient.getInstance();
+	
+	public static List<String> wing_users = new ArrayList<>();
+	public static String MOD_ID = "dracosm";
+	
+	
+	DiscordRPC lib = DiscordRPC.INSTANCE;
+	String applicationId = "1104180952151892039";
+	String steamId = "";
+	DiscordEventHandlers handlers = new DiscordEventHandlers();
+	Long start_time = System.currentTimeMillis() / 1000;
+
+	
+
+	Integer times = 0;
+	Timer t = new Timer();
+
+	
+	
+	@Override
+	public void onInitialize() {
+		 Util.loadWingUsers();
+		
+		logger.info("hello world");
+		
+		handlers.ready = (user) -> logger.info("Ready!");
+		lib.Discord_Initialize(applicationId, handlers, true, steamId);
+
+		basicPresence();
+		new Thread(() -> {
+			while (!Thread.currentThread().isInterrupted()) {
+				lib.Discord_RunCallbacks();
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException ignored) {
+				}
+			}
+		}, "RPC-Callback-Handler").start();
+	}
+		
+		
+	private void basicPresence() {
+
+		DiscordRichPresence presence = new DiscordRichPresence();
+		presence.startTimestamp = start_time; // epoch second
+		presence.details = "Playing Minecraft like a Greek God";
+		presence.largeImageKey = "spartan";
+		presence.largeImageText = "D3miGod Client";
+		presence.instance = 1;
+		lib.Discord_UpdatePresence(presence);
+
+	}
+	
+	public void onKeyPress(int key, int action) {
+		if (action == GLFW.GLFW_PRESS) {
+			for (Mod module : ModuleManager.INSTANCE.getModules()) {
+				if (key == module.getKey()) module.toggle();
+			}
+		}
+	}
+	
+	public void onTick() {
+		if(mc.player !=  null) {
+			for (Mod module : ModuleManager.INSTANCE.getEnabledModules()){
+				module.onTick();
+			}
+	}
+	}
+
+}

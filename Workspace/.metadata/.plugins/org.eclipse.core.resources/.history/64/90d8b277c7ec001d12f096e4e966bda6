@@ -1,0 +1,5 @@
+package demiclient.module.settings;
+
+public class ModeSetting extends Setting {
+
+}

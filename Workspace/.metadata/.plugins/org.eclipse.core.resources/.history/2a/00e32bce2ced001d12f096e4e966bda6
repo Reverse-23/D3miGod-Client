@@ -1,0 +1,5 @@
+package demiclient.module.combat;
+
+public class Offhand {
+
+}

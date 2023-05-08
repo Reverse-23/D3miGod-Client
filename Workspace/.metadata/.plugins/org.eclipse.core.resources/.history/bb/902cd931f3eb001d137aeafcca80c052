@@ -1,0 +1,31 @@
+package demiclient.module;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ModuleManager {
+	
+	public static final ModuleManager INSTANCE = new ModuleManager();
+	private List<Module> modules = new ArrayList<>();
+
+	public ModuleManager() {
+		
+	}
+	
+	public List<Module> getModules() {
+		return modules;
+	}
+
+	public List<Module> getEnabledModules() {
+		List<Module> enabled = new ArrayList<>();
+		for (Module module : modules) {
+			if (module.isEnabled())enabled.add(module);
+		}
+	}
+	private void addModules() {
+		
+	}
+	
+	
+	
+}

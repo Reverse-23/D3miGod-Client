@@ -1,0 +1,20 @@
+package demiclient.module.Movement;
+
+import org.lwjgl.glfw.GLFW;
+
+import demiclient.module.Mod;
+
+public class Flight extends Mod {
+
+	public Flight() {
+		super("Flight", "Allows you to skywalk", Category.MOVEMENT);
+		this.setKey(GLFW.GLFW_KEY_G);
+	}
+	
+	@Override
+	public void onTick() {
+		// TODO Auto-generated method stub
+		super.onTick();
+	}
+
+}

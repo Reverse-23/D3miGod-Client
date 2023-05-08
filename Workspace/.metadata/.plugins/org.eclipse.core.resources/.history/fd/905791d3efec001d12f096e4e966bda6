@@ -1,0 +1,10 @@
+package demiclient.ui.screen.clickgui;
+
+public class ClickGUI extends Screen{
+
+	public static final ClickGUI INSTANCE  = new ClickGUI();
+	
+	public ClickGUI() {
+		
+	}
+}

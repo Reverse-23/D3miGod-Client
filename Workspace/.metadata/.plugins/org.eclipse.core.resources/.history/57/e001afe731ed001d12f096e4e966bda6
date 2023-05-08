@@ -1,0 +1,24 @@
+package demiclient.module.render;
+
+import demiclient.module.Mod;
+
+public class NoPumpking extends Mod {
+
+	public NoPumpking() {
+		super("NoPumpking", "Removes overlay", Category.RENDER);
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	public void onEnable() {
+		// TODO Auto-generated method stub
+		super.onEnable();
+	}
+	
+	@Override
+	public void onDisable() {
+		mc.player.getAbilities().flying = true;
+		super.onDisable();
+	}
+
+}

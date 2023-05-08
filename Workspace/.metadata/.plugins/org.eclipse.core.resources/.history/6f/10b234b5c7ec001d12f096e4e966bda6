@@ -1,0 +1,10 @@
+package demiclient.module.settings;
+
+public class ModeSetting extends Setting {
+
+	public ModeSetting(String name) {
+		super(name);
+		// TODO Auto-generated constructor stub
+	}
+
+}

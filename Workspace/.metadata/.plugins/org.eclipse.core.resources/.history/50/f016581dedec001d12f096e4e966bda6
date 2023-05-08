@@ -1,0 +1,15 @@
+package demiclient.module.settings;
+
+public class NumberSetting extends Setting{
+
+	private double min, max, increment;
+	private double value;
+	
+	public NumberSetting(String name, double min, double max, double defaultValue, double increment) {
+		super(name);
+		this.min = min;
+		this.max = max;
+		this.value = defaultValue;
+	}
+	
+}

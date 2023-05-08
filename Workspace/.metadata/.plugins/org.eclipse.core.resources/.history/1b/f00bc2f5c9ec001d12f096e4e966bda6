@@ -1,0 +1,31 @@
+package demiclient.module.settings;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class ModeSetting extends Setting {
+
+	public List<String> modes;
+	private String mode;
+	private int index;
+	
+	public ModeSetting(String name, String defaultMode, String... modes) {
+		super(name);
+		this.modes = Arrays.asList(modes);
+		this.mode = defaultMode;
+		this.index = this.modes.indexOf(defaultMode);
+	}
+	
+	public String getMode() {
+		return mode;
+	}
+	
+	public List<String> getModes() {
+		return modes;
+	}
+	
+	public void setMode(String mode) {
+		this.mode = mode;
+	}
+
+}

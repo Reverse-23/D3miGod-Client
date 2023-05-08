@@ -1,0 +1,5 @@
+package cosmetics.features.models.base;
+
+public class WingModelBase {
+
+}

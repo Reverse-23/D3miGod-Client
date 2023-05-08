@@ -1,0 +1,5 @@
+package demiclient.module.world;
+
+public class AutoRespawn {
+
+}
